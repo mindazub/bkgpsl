@@ -6,7 +6,7 @@
     <!-- <p class="lead">Shop Name</p>                 -->
     <div class="list-group">
         @foreach($categories as $category)
-            <a href="#" class="list-group-item">{{ $category->name }}</a>
+            <a href="{{ route('catWithProd', [ $category->name ]) }}" class="list-group-item">{{ $category->name }}</a>
         @endforeach
     </div>
 </div>

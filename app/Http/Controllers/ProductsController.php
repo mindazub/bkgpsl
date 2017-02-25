@@ -30,5 +30,10 @@ class ProductsController extends Controller
         // ->orWhere('password', 'LIKE', '%'. Input::get('searchKeyWords') .'%')
         ->get();
     return View::make('products.search')->with('results', $results);
-}
+    }
+
+    public function showCategoryWithProducts(Category $category) {
+        $catPro = Category::find($category)->products()->get();
+        dd($catPro);
+    }
 }

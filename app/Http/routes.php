@@ -1,5 +1,6 @@
 <?php
-
+use App\Product;
+use App\Category;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -18,6 +19,9 @@ Route::get('/products/{id}', 'ProductsController@show');
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/category/{category}', 
+	['as' => 'catWithProd',
+	'uses' => 'ProductsController@showCategoryWithProducts']);
 
 
 Route::auth();
